@@ -3,6 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="india_flag_theme_action_bar" parent="AppTheme">
+        <item name="android:background">#ff9933</item>
     </style>
 
 </resources>
