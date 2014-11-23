@@ -29,8 +29,8 @@ public class HomeFragment  extends Fragment{
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-//            ((BaseActivity) activity).onSectionAttached(
-//                    getArguments().getInt(ARG_SECTION_NUMBER));
+            ((BaseActivity) activity).onSectionAttached(
+                    getArguments().getInt("index"));
         }
 
 }

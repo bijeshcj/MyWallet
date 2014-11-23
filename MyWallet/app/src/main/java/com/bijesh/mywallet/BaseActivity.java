@@ -55,8 +55,13 @@ public class BaseActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = new HomeFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("index",position);
+        fragment.setArguments(bundle);
+
         fragmentManager.beginTransaction()
-                .replace(R.id.container, new HomeFragment()) //PlaceholderFragment.newInstance(position + 1)
+                .replace(R.id.container,fragment) //PlaceholderFragment.newInstance(position + 1)
                 .commit();
     }
 
