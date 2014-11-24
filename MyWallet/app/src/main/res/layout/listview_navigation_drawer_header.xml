@@ -7,11 +7,12 @@
     >
 
     <TextView
+        android:id="@+id/lstViewHeaderId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="8dp"
-        android:text="options"
+        android:text="Header"
         android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white"

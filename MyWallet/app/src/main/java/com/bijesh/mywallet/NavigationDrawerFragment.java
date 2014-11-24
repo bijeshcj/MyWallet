@@ -22,6 +22,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.bijesh.mywallet.adapters.baseadpters.NavigationDrawerAdapter;
+
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
@@ -57,6 +59,7 @@ public class NavigationDrawerFragment extends Fragment {
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
+    private NavigationDrawerAdapter mNavigationDrawerAdapter;
 
     public NavigationDrawerFragment() {
     }
@@ -97,17 +100,28 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
-                getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                new String[]{
-                        getString(R.string.title_section1),
-                        getString(R.string.title_section2),
-                        getString(R.string.title_section3),
-                }));
+        populateAdapterValues();
+        mDrawerListView.setAdapter(mNavigationDrawerAdapter);
+//        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+//                getActionBar().getThemedContext(),
+//                android.R.layout.simple_list_item_1,
+//                android.R.id.text1,
+//                new String[]{
+//                        getString(R.string.title_section1),
+//                        getString(R.string.title_section2),
+//                        getString(R.string.title_section3),
+//                }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
+    }
+
+    private void populateAdapterValues(){
+        mNavigationDrawerAdapter = new NavigationDrawerAdapter(getActivity());
+        for(int i=1;i<30;i++){
+            mNavigationDrawerAdapter.addItem("Row Item # "+i);
+            if(i % 4 == 0)
+                mNavigationDrawerAdapter.addSectionHeaderItem("Section # "+i);
+        }
     }
 
     public boolean isDrawerOpen() {

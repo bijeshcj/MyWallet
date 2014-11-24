@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import com.bijesh.mywallet.R;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
@@ -64,6 +67,32 @@ public class NavigationDrawerAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+
+        ViewHolder viewHolder = null;
+        int rowType = getItemViewType(i);
+
+        if(view == null){
+            viewHolder = new ViewHolder();
+            switch (rowType){
+                case TYPE_ITEM:
+                    view = mLayoutInflater.inflate(R.layout.listview_navigation_drawer_options,null);
+                    viewHolder.textView = (TextView)view.findViewById(R.id.lstView_options);
+                    break;
+                case TYPE_SEPARATOR: //lstViewHeaderId
+                    view = mLayoutInflater.inflate(R.layout.listview_navigation_drawer_header,null);
+                    viewHolder.textView = (TextView)view.findViewById(R.id.lstViewHeaderId);
+                    break;
+            }
+            view.setTag(viewHolder);
+        }else {
+            viewHolder = (ViewHolder)view.getTag();
+        }
+
+        viewHolder.textView.setText(mData.get(i));
+
+        return view;
+    }
+    public static class ViewHolder{
+        public TextView textView;
     }
 }
