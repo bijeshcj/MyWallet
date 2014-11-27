@@ -1,6 +1,9 @@
 package com.bijesh.mywallet.adapters.baseadpters;
 
 import android.content.Context;
+import android.graphics.Paint;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -93,8 +96,17 @@ public class NavigationDrawerAdapter extends BaseAdapter {
         }else {
             viewHolder = (ViewHolder)view.getTag();
         }
-
-        viewHolder.textView.setText(mData.get(position));
+//        if(rowType == TYPE_SEPARATOR){
+//            Log.d(TAG,"$$$ inside sepearotr");
+////            String data = mData.get(position);
+////            SpannableString content = new SpannableString(data);
+////            content.setSpan(new UnderlineSpan(),0,data.length(),0);
+////            viewHolder.textView.setText(content);
+//            viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+//            viewHolder.textView.setText(mData.get(position));
+//        }else {
+            viewHolder.textView.setText(mData.get(position));
+//        }
 
         return view;
     }
