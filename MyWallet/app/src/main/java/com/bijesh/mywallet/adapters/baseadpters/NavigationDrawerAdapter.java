@@ -1,6 +1,7 @@
 package com.bijesh.mywallet.adapters.baseadpters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import java.util.TreeSet;
  * Created by Bijesh on 23-11-2014.
  */
 public class NavigationDrawerAdapter extends BaseAdapter {
+
+    private static final String TAG = NavigationDrawerAdapter.class.getCanonicalName();
 
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_SEPARATOR = 1;
@@ -35,7 +38,7 @@ public class NavigationDrawerAdapter extends BaseAdapter {
     }
 
     public void addSectionHeaderItem(final String item){
-        mData.add(item);
+//        mData.add(item);
         sectionHeader.add(mData.size()-1);
         notifyDataSetChanged();
     }
@@ -66,10 +69,13 @@ public class NavigationDrawerAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int position, View view, ViewGroup viewGroup) {
+
+        Log.d(TAG, "$$$ mData "+mData);
+        Log.d(TAG,"$$$ sectionHeader "+sectionHeader);
 
         ViewHolder viewHolder = null;
-        int rowType = getItemViewType(i);
+        int rowType = getItemViewType(position);
 
         if(view == null){
             viewHolder = new ViewHolder();
@@ -88,7 +94,7 @@ public class NavigationDrawerAdapter extends BaseAdapter {
             viewHolder = (ViewHolder)view.getTag();
         }
 
-        viewHolder.textView.setText(mData.get(i));
+        viewHolder.textView.setText(mData.get(position));
 
         return view;
     }

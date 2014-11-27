@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.bijesh.mywallet.adapters.baseadpters.NavigationDrawerAdapter;
 
+import java.util.ArrayList;
+
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
@@ -116,12 +118,32 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     private void populateAdapterValues(){
+//        ArrayList<String> navigationDrawerOptions = new ArrayList<String>();
+//        navigationDrawerOptions.add("Dashboard");
+//        navigationDrawerOptions.add("Records");
+//        navigationDrawerOptions.add("Debts");
+//        navigationDrawerOptions.add("Shopping Lists");
+//        navigationDrawerOptions.add("Warranties");
+//        navigationDrawerOptions.add("Settings");
+//        navigationDrawerOptions.add("Sharings");
         mNavigationDrawerAdapter = new NavigationDrawerAdapter(getActivity());
-        for(int i=1;i<30;i++){
-            mNavigationDrawerAdapter.addItem("Row Item # "+i);
-            if(i % 4 == 0)
-                mNavigationDrawerAdapter.addSectionHeaderItem("Section # "+i);
+        String[] navigationOptions = getResources().getStringArray(R.array.navigation_drawer_options);
+        for(int i=0;i<navigationOptions.length;i++){
+            boolean flag = hasHeader(navigationOptions[i]);
+            if(flag){
+                mNavigationDrawerAdapter.addItem(navigationOptions[i].split(" ##header")[0]);
+            }else {
+                mNavigationDrawerAdapter.addItem(navigationOptions[i]);
+            }
+            if(navigationOptions[i].endsWith(" ##header"))
+                mNavigationDrawerAdapter.addSectionHeaderItem(navigationOptions[i]);
         }
+
+
+    }
+
+    private boolean hasHeader(String val){
+        return val.endsWith(" ##header");
     }
 
     public boolean isDrawerOpen() {

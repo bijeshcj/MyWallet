@@ -10,4 +10,17 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="navigation_drawer_options">
+        <item>username ##header</item>
+        <item>Dashboard</item>
+        <item>Records</item>
+        <item>MODULES ##header</item>
+        <item>Debts</item>
+        <item>Shopping Lists</item>
+        <item>Warranties</item>
+        <item>OPTIONS ##header</item>
+        <item>Settings</item>
+        <item>Sharings</item>
+    </string-array>
+
 </resources>

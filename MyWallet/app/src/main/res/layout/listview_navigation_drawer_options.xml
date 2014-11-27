@@ -7,10 +7,10 @@
         android:id="@+id/lstView_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/black"
+        android:background="@android:color/white"
         android:gravity="center_vertical"
         android:text="options"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:padding="5dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         />
