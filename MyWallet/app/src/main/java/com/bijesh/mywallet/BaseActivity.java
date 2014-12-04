@@ -84,7 +84,7 @@ public class BaseActivity extends ActionBarActivity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff9933")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#005CE6")));
     }
 
 

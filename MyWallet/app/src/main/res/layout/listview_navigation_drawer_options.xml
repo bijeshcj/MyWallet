@@ -3,8 +3,15 @@
      android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:id="@+id/top_empty_view"
+        />
+
     <ImageView
         android:id="@+id/img_options"
+        android:layout_below="@id/top_empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_act_settings"
@@ -25,5 +32,9 @@
         android:padding="2dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"/>
 
 </RelativeLayout>

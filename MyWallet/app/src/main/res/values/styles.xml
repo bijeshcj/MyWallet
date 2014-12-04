@@ -7,7 +7,7 @@
     </style>
 
     <style name="india_flag_theme_action_bar" parent="AppTheme">
-        <item name="android:background">#ff9933</item>
+        <item name="android:background">#005CE6</item>
     </style>
 
 </resources>
