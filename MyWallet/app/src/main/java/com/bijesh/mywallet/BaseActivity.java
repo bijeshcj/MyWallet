@@ -1,6 +1,7 @@
 package com.bijesh.mywallet;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
@@ -19,7 +20,10 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bijesh.mywallet.dialogs.AmountEntryDialog;
+import com.bijesh.mywallet.dialogs.DialogUtils;
 import com.bijesh.mywallet.fragments.HomeFragment;
 
 
@@ -110,6 +114,11 @@ public class BaseActivity extends ActionBarActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(id == R.id.action_example){
+            DialogUtils.openDialog(new AmountEntryDialog(this),AmountEntryDialog.class);
             return true;
         }
 
