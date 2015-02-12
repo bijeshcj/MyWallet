@@ -265,6 +265,7 @@
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="2"
+                android:id="@+id/txtInsert"
                 android:text="Insert"
                 android:textColor="@android:color/black"
                 android:textSize="25dp"
