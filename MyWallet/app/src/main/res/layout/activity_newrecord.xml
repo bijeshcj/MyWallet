@@ -13,6 +13,7 @@
 
 
         <Spinner
+            android:paddingTop="20dp"
             android:id="@+id/accountTypeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/accountTypeSpinner"
+            android:paddingTop="20dp"
             android:weightSum="2">
 
             <EditText
@@ -45,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/denominationLayout"
             android:orientation="horizontal"
+            android:paddingTop="20dp"
             android:weightSum="2">
 
             <Spinner
@@ -67,66 +70,94 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/expenseTypeLayout"
+            android:paddingTop="20dp"
             android:id="@+id/edtTxtDesc"
             android:hint="Description.Also you can use # (hash) to create the #tag"
             />
 
-        <GridLayout
+        <LinearLayout
             android:layout_below="@id/edtTxtDesc"
-            android:id="@+id/actionGridLayout"
+            android:id="@+id/actionsLinearLayout"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="3"
+            android:paddingTop="20dp"
             >
 
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="Expense"
-
-                />
-
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="Template"
-
-                />
-
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="Date"
-
-                />
-
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="Time"
-
-                />
-
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="Img receipt"
-
-                />
-
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:text="None"
-
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
 
 
-            </GridLayout>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Expense"
+
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Template"
+
+                    />
+
+                </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:paddingTop="15dp"
+                android:layout_height="wrap_content">
 
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:paddingTop="15dp"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Img Receipt"
+
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="None"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
     </ScrollView>

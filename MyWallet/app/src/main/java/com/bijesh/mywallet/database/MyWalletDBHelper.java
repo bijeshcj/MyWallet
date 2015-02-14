@@ -22,6 +22,7 @@ public class MyWalletDBHelper extends SQLiteOpenHelper implements SQLiteConstant
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+// TODO : use a pattern here as of now just create the table
 
     }
 
